@@ -1,0 +1,27 @@
+# Misc
+dist/
+.astro/
+*.log*
+
+# Dependencies
+node_modules/
+
+# Secrets
+.env
+
+# macOS-specific (propietary btw)
+.DS_Store
+
+# Inferior IDEs
+.idea/
+.vscode/
+
+# Superior IDEs
+*~
+.#*
+*~
+*.un~
+*.swp
+*.swo
+*.swx
+*.save
