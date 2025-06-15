@@ -1,12 +1,19 @@
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/logo.png" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Sanmarcux</title>
-	</head>
-	<body>
-		<h1>Sanmarcux.org</h1>
-		We are so fucking back
-	</body>
-</html>
+---
+import Footer from '@components/footer.astro';
+import Header from '@components/header.astro';
+import Content from '@layouts/content.astro';
+import Layout from '@layouts/layout.astro';
+---
+
+<Layout title="Sanmarcux">
+	<Header />
+	<Content>
+		<!-- <h1>Sanmarcux.org</h1>
+		We are so fucking back -->
+	</Content>
+	<img src="https://daikonet.neocities.org/img/hypernet_img/carrera2.png" />
+	<Footer />
+</Layout>
+
+<style>
+</style>
