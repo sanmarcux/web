@@ -1,0 +1,18 @@
+---
+import Anchor from '@components/anchor.astro';
+
+export type Props = {
+  href: string;
+};
+
+const { href }: Props = Astro.props;
+const isCurrentPage = href === Astro.url.pathname;
+---
+
+<div>
+  <Anchor href={href} style={{
+    fontWeight: isCurrentPage ? 'bold' : 'normal',
+  }} variant='white'>
+    <slot />
+  </Anchor>
+</div>

@@ -1,0 +1,57 @@
+---
+export type Props = astroHTML.JSX.AnchorHTMLAttributes & {
+  variant?: 'normal' | 'white',
+  hideExternalIcon?: boolean,
+  href: string,
+}
+
+const { href, variant = 'normal', hideExternalIcon = false, ...rest } = Astro.props;
+const isExternalLink = href.startsWith("http://") || href.startsWith("https://");
+---
+
+{(isExternalLink === true && !hideExternalIcon) ? (
+  <a href={href} class:list={[variant]} {...rest}>
+    <span>
+      <slot />
+    </span>
+    <svg class:list={[variant]} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  </a>
+) : (
+  <a href={href} class:list={[variant]} {...rest}>
+    <slot />
+  </a>
+)}
+
+<style lang="scss">
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  a,
+  a.current,
+  a:visited,
+  a:link, {
+    &.normal {
+      color: #800000;
+    }
+    &.white {
+      color: white;
+    }
+  }
+
+  svg {
+    &.normal {
+      stroke: #800000;
+    }
+    &.white {
+      stroke: white;
+    }
+  }
+</style>

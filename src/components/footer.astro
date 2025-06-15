@@ -1,0 +1,46 @@
+---
+import Content from '@layouts/content.astro';
+import Anchor from '@components/anchor.astro';
+---
+
+<footer>
+  <nav>
+    <Content class="footer-top">
+      <div>
+        Powered by Debian
+      </div>
+      <div>
+        <Anchor href="https://github.com/sanmarcux/web" variant="white" target="_blank">Source code</Anchor>
+      </div>
+    </Content>
+  </nav>
+  <div class="footer-bottom">
+    <Content>
+      Unless otherwise stated, the content of this page is licensed under
+      <Anchor href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">Creative Commons Attribution-ShareAlike 4.0 License</Anchor>
+      <div>
+      </div>
+    </Content>
+  </div>
+</footer>
+
+<style>
+  nav {
+    background-color: #444444;
+    color: white;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    color: rgb(16, 16, 16);
+    border-top: 1px solid rgb(229, 229, 229);
+    padding: 8px 0;
+  }
+</style>
