@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  font-size: 16px;
+  /* font-family: sans-serif; */
+  line-height: 1.2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+}
+
+/* Styles */
+
+a:link {
+  color: #800000;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #800000;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #800000;
+  background-color: transparent;
+  text-decoration: underline;
+}

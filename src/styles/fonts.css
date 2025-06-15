@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Lapsus';
+  src: url('/fonts/lapsus-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: bold;
+  font-display: swap;
+}
