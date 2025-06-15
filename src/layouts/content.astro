@@ -1,0 +1,35 @@
+---
+export type Props = astroHTML.JSX.HTMLAttributes & {
+  variant?: 'normal' | 'wide',
+}
+
+const { variant = 'normal', class: classname, ...rest } = Astro.props;
+---
+
+<div class={`content-wrapper ${variant}`}>
+  <div class={`content-containe ${classname}`} {...rest}>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .content-wrapper {
+    width: 100%;
+    padding-left: var(--spacing-page);
+    padding-right: var(--spacing-page);
+  }
+
+  .content-container {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content-wrapper.normal .content-container {
+    max-width: 72rem;
+  }
+
+  .content-wrapper.wide .content-container {
+    max-width: 78rem;
+  }
+</style>
