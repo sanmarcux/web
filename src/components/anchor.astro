@@ -5,12 +5,16 @@ export type Props = astroHTML.JSX.AnchorHTMLAttributes & {
   href: string,
 }
 
-const { href, variant = 'normal', hideExternalIcon = false, ...rest } = Astro.props;
+let { href, target, variant = 'normal', hideExternalIcon = false, ...rest } = Astro.props;
 const isExternalLink = href.startsWith("http://") || href.startsWith("https://");
+
+if (!target && isExternalLink) {
+  target = "_blank";
+}
 ---
 
 {(isExternalLink === true && !hideExternalIcon) ? (
-  <a href={href} class:list={[variant]} {...rest}>
+  <a href={href} target={target} class:list={[variant]} {...rest}>
     <span>
       <slot />
     </span>
@@ -21,7 +25,7 @@ const isExternalLink = href.startsWith("http://") || href.startsWith("https://")
     </svg>
   </a>
 ) : (
-  <a href={href} class:list={[variant]} {...rest}>
+  <a href={href} target={target} class:list={[variant]} {...rest}>
     <slot />
   </a>
 )}

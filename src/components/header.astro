@@ -1,6 +1,7 @@
 ---
 import Content from "@layouts/content.astro";
 import NavItem from "./nav-item.astro";
+import Anchor from "./anchor.astro";
 ---
 
 <header>
@@ -9,7 +10,7 @@ import NavItem from "./nav-item.astro";
       <img src="/logo.svg" />
       <div>
         <h2>San marcux</h2>
-        <span>La comunidad sanmarquina de <i>software libre</i></span>
+        <span>La comunidad sanmarquina de <i><Anchor variant="white" hideExternalIcon href="https://www.fsf.org/es/recursos/que-es-el-software-libre">software libre</Anchor></i></span>
       </div>
     </div>
   </Content>
