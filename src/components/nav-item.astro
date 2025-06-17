@@ -12,6 +12,7 @@ const isCurrentPage = href === Astro.url.pathname;
 <div>
   <Anchor href={href} style={{
     fontWeight: isCurrentPage ? 'bold' : 'normal',
+    textDecoration: isCurrentPage ? 'underline' : 'none',
   }} variant='white'>
     <slot />
   </Anchor>

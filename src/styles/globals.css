@@ -13,6 +13,12 @@ html, body {
   overflow-x: hidden;
 }
 
+@media (max-width: 768px) {
+  :root {
+    font-size: 11px;
+  }
+}
+
 /* Styles */
 
 a:link {
